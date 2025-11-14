@@ -356,12 +356,6 @@
       "api": "https://cj.lziapi.com/api.php/provide/vod/",
       "status": "available"
     },
-    "new_api_62": {
-      "name": "美少女",
-      "api": "https://www.msnii.com/api/xml.php",
-      "detail": "2025 CSDN/Gitee VOD",
-      "status": "available"
-    },
     "new_api_64": {
       "name": "淫水机",
       "api": "https://www.xrbsp.com/api/xml.php",
@@ -495,6 +489,6 @@
       "status": "available"
     }
   },
-  "update_date": "2025-11-14T15:18:52.852650",
-  "total_available": 84
+  "update_date": "2025-11-14T15:32:40.795023",
+  "total_available": 83
 }
