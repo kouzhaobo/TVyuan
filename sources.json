@@ -362,272 +362,247 @@
             "detail": "https://www.pgxdy.com"
         },
         "ffzynew": {
-            "api": "https://api.ffzyapi.com/api.php/provide/vod",
             "name": "非凡影视new",
+            "api": "https://api.ffzyapi.com/api.php/provide/vod",
             "detail": "http://ffzy5.tv"
         },
         "jisu": {
-            "api": "https://jszyapi.com/api.php/provide/vod",
             "name": "极速资源",
+            "api": "https://jszyapi.com/api.php/provide/vod",
             "detail": "https://jszyapi.com"
         },
         "mozhua": {
-            "api": "https://mozhuazy.com/api.php/provide/vod",
-            "name": "魔爪资源"
+            "name": "魔爪资源",
+            "api": "https://mozhuazy.com/api.php/provide/vod"
         },
         "mdzy": {
-            "api": "https://www.mdzyapi.com/api.php/provide/vod",
-            "name": "魔都资源"
+            "name": "魔都资源",
+            "api": "https://www.mdzyapi.com/api.php/provide/vod"
         },
         "kauiboziyuan": {
-            "api": "https://gayapi.com/api.php/provide/vod",
-            "name": "快播资源网站"
+            "name": "快播资源网站",
+            "api": "https://gayapi.com/api.php/provide/vod"
         },
         "xingbaziyuan": {
-            "api": "https://xingba111.com/api.php/provide/vod",
-            "name": "杏吧资源"
+            "name": "杏吧资源",
+            "api": "https://xingba111.com/api.php/provide/vod"
         },
         "liangziziyuan": {
-            "api": "https://cj.lziapi.com/api.php/provide/vod",
-            "name": "量子资源"
+            "name": "量子资源",
+            "api": "https://cj.lziapi.com/api.php/provide/vod"
         },
         "senlinziyuan": {
-            "api": "https://slapibf.com/api.php/provide/vod",
-            "name": "森林资源"
+            "name": "森林资源",
+            "api": "https://slapibf.com/api.php/provide/vod"
         },
         "aiduanjucc": {
-            "api": "https://www.aiduanju.cc/",
-            "name": "爱短剧.cc"
+            "name": "爱短剧.cc",
+            "api": "https://www.aiduanju.cc/"
         },
         "huaweiba": {
-            "api": "https://huawei8.live/api.php/provide/vod",
-            "name": "华为吧资源"
+            "name": "华为吧资源",
+            "api": "https://huawei8.live/api.php/provide/vod"
         },
         "taopian": {
-            "api": "https://taopianapi.com/cjapi/sda/vod",
-            "name": "淘片资源"
+            "name": "淘片资源",
+            "api": "https://taopianapi.com/cjapi/sda/vod"
         },
         "hongniuziyuan": {
-            "api": "https://www.hongniuzy3.com/api.php/provide/vod",
-            "name": "红牛资源"
+            "name": "红牛资源",
+            "api": "https://www.hongniuzy3.com/api.php/provide/vod"
         },
         "suonisandian": {
-            "api": "https://xsd.sdzyapi.com/api.php/provide/vod",
-            "name": "索尼-闪电资源"
+            "name": "索尼-闪电资源",
+            "api": "https://xsd.sdzyapi.com/api.php/provide/vod"
         },
         "yayaziyuan": {
-            "api": "https://cj.yayazy.net/api.php/provide/vod",
-            "name": "鸭鸭资源"
+            "name": "鸭鸭资源",
+            "api": "https://cj.yayazy.net/api.php/provide/vod"
         },
         "jinyingziyuan": {
-            "api": "https://jyzyapi.com/provide/vod",
-            "name": "金鹰资源采集网"
+            "name": "金鹰资源采集网",
+            "api": "https://jyzyapi.com/provide/vod"
         },
         "fengchao": {
-            "api": "https://api.fczy888.me/api.php/provide/vod",
-            "name": "蜂巢片库"
+            "name": "蜂巢片库",
+            "api": "https://api.fczy888.me/api.php/provide/vod"
         },
         "jinmaziyuan2": {
-            "api": "https://api.jmzy.com/api.php/provide/vod",
-            "name": "金马资源网"
+            "name": "金马资源网",
+            "api": "https://api.jmzy.com/api.php/provide/vod"
         },
         "dadiziy": {
-            "api": "https://dadiapi.com/api.php/provide/vod",
-            "name": "大地资源网络"
+            "name": "大地资源网络",
+            "api": "https://dadiapi.com/api.php/provide/vod"
         },
         "huangseziy": {
-            "api": "https://hsckzy888.com/api.php/provide/vod",
-            "name": "黄色资源啊啊"
+            "name": "黄色资源啊啊",
+            "api": "https://hsckzy888.com/api.php/provide/vod"
         },
         "xiaojiziy": {
-            "api": "https://api.xiaojizy.live/provide/vod",
-            "name": "小鸡资源"
+            "name": "小鸡资源",
+            "api": "https://api.xiaojizy.live/provide/vod"
         },
         "kauicheziyuan": {
-            "api": "https://caiji.kuaichezy.org/api.php/provide",
-            "name": "快车资源阿"
+            "name": "快车资源阿",
+            "api": "https://caiji.kuaichezy.org/api.php/provide"
         },
         "xinlangaa": {
-            "api": "https://api.xinlangapi.com/xinlangapi.php/provide/vod",
-            "name": "新浪资源阿"
+            "name": "新浪资源阿",
+            "api": "https://api.xinlangapi.com/xinlangapi.php/provide/vod"
         },
         "lajiaoziyu": {
-            "api": "https://apilj.com/api.php/provide",
-            "name": "辣椒资源黄黄"
+            "name": "辣椒资源黄黄",
+            "api": "https://apilj.com/api.php/provide"
         },
         "youzhidianying": {
-            "api": "https://api.yzzy-api.com/inc/ldg_api_all.php/provide/vod",
-            "name": "优质资源库1080zyk6.com高清"
+            "name": "优质资源库1080zyk6.com高清",
+            "api": "https://api.yzzy-api.com/inc/ldg_api_all.php/provide/vod"
         },
         "iqiyi": {
-            "api": "https://www.iqiyizyapi.com/api.php/provide/vod",
-            "name": "iqiyi资源"
+            "name": "iqiyi资源",
+            "api": "https://www.iqiyizyapi.com/api.php/provide/vod"
         },
         "xibaocaiji": {
-            "api": "https://www.xxibaozyw.com/api.php/provide/vod",
-            "name": "细胞采集黄色"
+            "name": "细胞采集黄色",
+            "api": "https://www.xxibaozyw.com/api.php/provide/vod"
         },
         "qiqiqiqi": {
-            "api": "https://www.qiqidys.com/api.php/provide/vod/",
-            "name": "七七影视"
+            "name": "七七影视",
+            "api": "https://www.qiqidys.com/api.php/provide/vod/"
         },
         "yingshigongchang": {
-            "api": "https://cj.lziapi.com/api.php/provide/vod/",
-            "name": "影视工厂"
+            "name": "影视工厂",
+            "api": "https://cj.lziapi.com/api.php/provide/vod/"
         },
         "fantuanyingshi": {
-            "api": "https://www.fantuan.tv/api.php/provide/vod/",
-            "name": "饭团影视"
+            "name": "饭团影视",
+            "api": "https://www.fantuan.tv/api.php/provide/vod/"
         },
         "new_api_1": {
-            "name": "肥猫备用接口",
-            "api": "http://feimao.com",
-            "detail": "TVBox 备用点播源，支持全网影视"
+            "name": "饭太硬",
+            "api": "http://www.饭太硬.com/tv",
+            "detail": "单仓 TV VOD，2025 更新"
         },
         "new_api_2": {
-            "name": "饭太硬主接口",
-            "api": "http://www.fantaiying.com/tv",
-            "detail": "多线路影视源，免费高清"
+            "name": "摸鱼儿",
+            "api": "http://我不是.摸鱼儿.com",
+            "detail": "单仓 TV 接口"
         },
         "new_api_3": {
-            "name": "饭太硬备用1",
-            "api": "http://www.fantaiying.net/tv",
-            "detail": "备用线路，包含 18+ 资源"
+            "name": "肥猫",
+            "api": "http://肥猫.com",
+            "detail": "TVBox 备用 VOD"
         },
         "new_api_4": {
-            "name": "毒盒接口",
-            "api": "https://duduh.com/tv",
-            "detail": "综合 VOD，快速更新"
+            "name": "神秘哥哥们备用",
+            "api": "http://fty.xxooo.cf/tv",
+            "detail": "单仓接口"
         },
         "new_api_5": {
-            "name": "小盒子4K",
-            "api": "http://xhztv.top/4k.json",
-            "detail": "4K 高清视频源"
+            "name": "毒盒",
+            "api": "https://毒盒.com/tv/",
+            "detail": "综合 VOD"
         },
         "new_api_6": {
-            "name": "欧歌免费",
-            "api": "https://tv.nxog.top/m/111.php?ou=公众号欧歌app&mz=index&jar=index&123&b=tv",
-            "detail": "免费线路，央视+影视"
+            "name": "动漫城",
+            "api": "https://www.yingm.cc/dm/dm.json",
+            "detail": "动漫 VOD"
         },
         "new_api_7": {
-            "name": "蓝天Luck（央视）",
-            "api": "https://gitee.com/lukei7/lib/raw/Luck/%E8%87%AA%E5%BB%BA.json",
-            "detail": "央视大全，直播+点播"
+            "name": "俊佬",
+            "api": "http://home.jundie.top:81/top98.json",
+            "detail": "分享源"
         },
         "new_api_8": {
-            "name": "小米接口",
-            "api": "http://www.mpanso.com/小米/DEMO.json",
-            "detail": "小米兼容源"
+            "name": "道长",
+            "api": "https://cdn.gitmirror.com/bb/xduo/libs/master/index.json",
+            "detail": "VOD 配置"
         },
         "new_api_9": {
-            "name": "王二小接口",
-            "api": "http://tvbox.xn--4kq62z5rby2qupq9ub.top/",
-            "detail": "公众号分享源"
+            "name": "PG接口",
+            "api": "https://cnb.cool/fish2018/pg/-/git/raw/master/jsm.json",
+            "detail": "单仓"
         },
         "new_api_10": {
-            "name": "爱TV吧（含央视）",
-            "api": "https://700sjro44343.vicp.fun/vip/vip/tv.json",
-            "detail": "央视+成人资源"
+            "name": "宝盒",
+            "api": "http://mzjk.top/禁止贩卖",
+            "detail": "TV 接口"
         },
         "new_api_11": {
-            "name": "OK吊炸天",
-            "api": "http://ok321.top/tv",
-            "detail": "蜂蜜兼容，高清"
+            "name": "王小二放牛娃",
+            "api": "http://tvbox.王二小放牛娃.top",
+            "detail": "公众号源"
         },
         "new_api_12": {
-            "name": "巧技接口",
-            "api": "http://cdn.qiaoji8.com/tvbox.json",
-            "detail": "巧技源，短剧支持"
+            "name": "南风",
+            "api": "https://raw.githubusercontent.com/yoursmile66/TVBox/main/XC.json",
+            "detail": "单仓"
         },
         "new_api_13": {
-            "name": "欧歌单线路",
-            "api": "https://xn--xkkx-rp5imh.v.nxog.top/api.php?id=3",
-            "detail": "单线路优化"
-        },
-        "new_api_14": {
-            "name": "菜妮丝XBPQ",
-            "api": "https://tv.xn--yhqu5zs87a.top",
+            "name": "菜妮丝",
+            "api": "https://tv.菜妮丝.top",
             "detail": "多类型 VOD"
         },
+        "new_api_14": {
+            "name": "运输车",
+            "api": "https://weixine.net/ysc.json",
+            "detail": "接口"
+        },
         "new_api_15": {
-            "name": "摸鱼儿接口",
-            "api": "http://woshinshi.moyuer.com",
-            "detail": "摸鱼儿源"
+            "name": "HG接口",
+            "api": "https://api.hgyx.vip/hgyx.json",
+            "detail": "VOD"
         },
         "new_api_16": {
-            "name": "天微科技",
-            "api": "https://github.moeyy.xyz/https://raw.githubusercontent.com/vcloudc/tvbox/main/tw/api.json",
-            "detail": "天微 API"
+            "name": "dxawi",
+            "api": "https://dxawi.github.io/0/0.json",
+            "detail": "单仓"
         },
         "new_api_17": {
-            "name": "二月红接口",
-            "api": "https://700sjro44343.vicp.fun/eggp/0211/tv.json",
-            "detail": "二月红更新源"
+            "name": "小米",
+            "api": "http://www.mitvbox.xyz/小米/DEMO.json",
+            "detail": "小米兼容"
         },
         "new_api_18": {
-            "name": "传说blog",
-            "api": "https://chuanshuo.77blog.cn/tv.json",
-            "detail": "Blog 分享源"
+            "name": "小盒子单仓",
+            "api": "http://xhztv.top/xhz",
+            "detail": "TVBox"
         },
         "new_api_19": {
-            "name": "青龙接口",
-            "api": "https://gitee.com/yiwu369/6758/raw/master/%E9%9D%92%E9%BE%99/1.json",
-            "detail": "青龙 VOD"
+            "name": "小盒子4K",
+            "api": "http://xhztv.top/4k.json",
+            "detail": "4K VOD"
         },
         "new_api_20": {
-            "name": "香雅情短剧",
-            "api": "http://74.120.175.78/JK/XYQTVBox/dj.json",
-            "detail": "短剧专区"
+            "name": "潇洒接口",
+            "api": "https://raw.githubusercontent.com/PizazzGY/TVBox/main/api.json",
+            "detail": "分享"
         },
         "new_api_21": {
-            "name": "短剧频道",
-            "api": "http://box.ufuzi.com/tv/qq/短剧频道/api.json",
-            "detail": "QQ 短剧源"
+            "name": "香雅情",
+            "api": "https://raw.githubusercontent.com/xyq254245/xyqonlinerule/main/XYQTVBox.json",
+            "detail": "短剧 VOD"
         },
         "new_api_22": {
-            "name": "少儿频道",
-            "api": "https://jihulab.com/ymz1231/xymz/-/raw/main/ymshaoer",
-            "detail": "少儿内容"
+            "name": "小苹果接口",
+            "api": "https://bitbucket.org/xduo/duoapi/raw/master/xpg.json",
+            "detail": "接口"
         },
         "new_api_23": {
-            "name": "俊哥接口",
-            "api": "http://home.jundie.top:81/top98.json",
-            "detail": "俊哥分享"
+            "name": "蜂蜜接口",
+            "api": "https://raw.githubusercontent.com/FongMi/CatVodSpider/main/json/demo.json",
+            "detail": "TVBox"
         },
         "new_api_24": {
-            "name": "4K云盘",
-            "api": "https://9xi4o.tk/0725.json",
-            "detail": "4K 云盘源"
+            "name": "OK影视内部",
+            "api": "http://ok321.top/tv",
+            "detail": "高清 VOD"
         },
         "new_api_25": {
-            "name": "巧儿接口",
-            "api": "http://pandown.pro/tvbox/tvbox.json",
-            "detail": "巧儿 VOD"
-        },
-        "new_api_26": {
-            "name": "胖虎接口",
-            "api": "https://notabug.org/imbig66/tv-spider-man/raw/master/%E9%85%8D%E7%BD%AE/0801.json",
-            "detail": "胖虎源"
-        },
-        "new_api_27": {
-            "name": "黄金分割",
-            "api": "https://gitlab.com/lzc1021lzc/hjfggzs.hjys/-/raw/main/hjys.free.json",
-            "detail": "黄金分割免费"
-        },
-        "new_api_28": {
-            "name": "ocean2025",
-            "api": "https://git.acwing.com/ocean2025/ocean/-/raw/main/api.json",
-            "detail": "2025 新源"
-        },
-        "new_api_29": {
-            "name": "驸马影视",
-            "api": "http://fmys.top/fmys.json",
-            "detail": "驸马接口"
-        },
-        "new_api_30": {
-            "name": "林少接口",
-            "api": "https://ghproxy.net/https://raw.githubusercontent.com/xiaolinshao/linshao/main/1.json",
-            "detail": "林少源"
+            "name": "AV-TVBox成人",
+            "api": "https://raw.bgithub.xyz/wwb521/live/refs/heads/main/video.json",
+            "detail": "2025.5.20 更新成人源"
         }
     }
 }
