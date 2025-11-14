@@ -37,12 +37,6 @@
       "detail": "https://api.ukuapi88.com",
       "status": "available"
     },
-    "api_7": {
-      "name": "TV-ikun资源",
-      "api": "https://ikunzyapi.com/api.php/provide/vod",
-      "detail": "https://ikunzyapi.com",
-      "status": "available"
-    },
     "api_8": {
       "name": "TV-wujinapi无尽",
       "api": "https://api.wujinapi.cc/api.php/provide/vod",
@@ -53,24 +47,6 @@
       "name": "TV-光速资源",
       "api": "https://api.guangsuapi.com/api.php/provide/vod",
       "detail": "https://api.guangsuapi.com",
-      "status": "available"
-    },
-    "api_11": {
-      "name": "TV-卧龙点播",
-      "api": "https://collect.wolongzyw.com/api.php/provide/vod",
-      "detail": "https://collect.wolongzyw.com",
-      "status": "available"
-    },
-    "api_12": {
-      "name": "TV-卧龙资源",
-      "api": "https://collect.wolongzy.cc/api.php/provide/vod",
-      "detail": "",
-      "status": "available"
-    },
-    "api_13": {
-      "name": "TV-卧龙资源",
-      "api": "https://wolongzyw.com/api.php/provide/vod",
-      "detail": "https://wolongzyw.com",
       "status": "available"
     },
     "api_14": {
@@ -107,18 +83,6 @@
       "name": "TV-无尽资源",
       "api": "https://api.wujinapi.net/api.php/provide/vod",
       "detail": "",
-      "status": "available"
-    },
-    "api_21": {
-      "name": "TV-旺旺短剧",
-      "api": "https://wwzy.tv/api.php/provide/vod",
-      "detail": "https://wwzy.tv",
-      "status": "available"
-    },
-    "api_22": {
-      "name": "TV-旺旺资源",
-      "api": "https://api.wwzy.tv/api.php/provide/vod",
-      "detail": "https://api.wwzy.tv",
       "status": "available"
     },
     "api_23": {
@@ -307,12 +271,6 @@
       "detail": "https://apilsbzy1.com",
       "status": "available"
     },
-    "api_67": {
-      "name": "AV-色南国",
-      "api": "https://api.sexnguon.com/api.php/provide/vod",
-      "detail": "https://api.sexnguon.com",
-      "status": "available"
-    },
     "api_69": {
       "name": "AV-辣椒资源",
       "api": "https://apilj.com/api.php/provide/vod",
@@ -397,8 +355,80 @@
       "name": "影视工厂",
       "api": "https://cj.lziapi.com/api.php/provide/vod/",
       "status": "available"
+    },
+    "new_api_62": {
+      "name": "美少女",
+      "api": "https://www.msnii.com/api/xml.php",
+      "detail": "2025 CSDN/Gitee VOD",
+      "status": "new_available"
+    },
+    "new_api_64": {
+      "name": "淫水机",
+      "api": "https://www.xrbsp.com/api/xml.php",
+      "detail": "2025 CSDN/Gitee VOD",
+      "status": "new_available"
+    },
+    "new_api_66": {
+      "name": "香奶儿",
+      "api": "https://www.gdlsp.com/api/xml.php",
+      "detail": "2025 CSDN/Gitee VOD",
+      "status": "new_available"
+    },
+    "new_api_68": {
+      "name": "白嫖",
+      "api": "https://www.kxgav.com/api/xml.php",
+      "detail": "2025 CSDN/Gitee VOD",
+      "status": "new_available"
+    },
+    "new_api_70": {
+      "name": "黄AV",
+      "api": "https://www.pgxdy.com/api/xml.php",
+      "detail": "2025 CSDN/Gitee VOD",
+      "status": "new_available"
+    },
+    "new_api_72": {
+      "name": "成人01",
+      "api": "http://dadiapi.com/api.php",
+      "detail": "2025 CSDN/Gitee VOD",
+      "status": "new_available"
+    },
+    "new_api_74": {
+      "name": "成人03",
+      "api": "https://www.gdlsp.com/api/xml.php",
+      "detail": "2025 CSDN/Gitee VOD",
+      "status": "new_available"
+    },
+    "new_api_76": {
+      "name": "成人04",
+      "api": "https://www.msnii.com/api/xml.php",
+      "detail": "2025 CSDN/Gitee VOD",
+      "status": "new_available"
+    },
+    "new_api_78": {
+      "name": "成人05",
+      "api": "https://www.xrbsp.com/api/xml.php",
+      "detail": "2025 CSDN/Gitee VOD",
+      "status": "new_available"
+    },
+    "new_api_80": {
+      "name": "成人06",
+      "api": "https://www.xrbsp.com/api/xml.php",
+      "detail": "2025 CSDN/Gitee VOD",
+      "status": "new_available"
+    },
+    "new_api_82": {
+      "name": "成人07",
+      "api": "http://dadiapi.com/api.php",
+      "detail": "2025 CSDN/Gitee VOD",
+      "status": "new_available"
+    },
+    "new_api_84": {
+      "name": "成人09",
+      "api": "https://www.xrbsp.com/api/xml.php",
+      "detail": "2025 CSDN/Gitee VOD",
+      "status": "new_available"
     }
   },
-  "update_date": "2025-11-14T14:27:25.352612",
-  "total_available": 68
+  "update_date": "2025-11-14T14:37:15.434755",
+  "total_available": 73
 }
