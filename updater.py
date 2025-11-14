@@ -5,11 +5,10 @@ import re
 from datetime import datetime
 from typing import Dict, Any, List
 
-# 初始搜索查询（动态更新 RETRIEVE_URLS）
+# 初始搜索查询（动态更新，只用 GitHub/Gitee，避免 CSDN SSL 问题）
 INITIAL_SEARCH_QUERIES = [
     "https://github.com/search?q=2025+TVBox+VOD+API+raw+json&type=code",
-    "https://gitee.com/explore?type=project&q=TVBox+2025",
-    "https://search.csdn.net/search?query=TVBox%20%E6%BA%90%202025%20raw%20json"
+    "https://gitee.com/explore?type=project&q=TVBox+2025"
 ]
 
 def update_retrieve_urls() -> List[str]:
@@ -19,7 +18,7 @@ def update_retrieve_urls() -> List[str]:
         try:
             resp = requests.get(query_url, timeout=10, headers={'User-Agent': 'Mozilla/5.0'})
             if resp.status_code == 200:
-                urls = re.findall(r'https?://(?:raw\.githubusercontent\.com|(?:gitee\.com)/[^/]+/[^/]+/raw|notabug\.org/[^/]+/[^/]+/src)/[^"\s]+(?:\.json|\.md)', resp.text)
+                urls = re.findall(r'https?://(?:raw\.githubusercontent\.com|(?:gitee\.com)/[^/]+/[^/]+/raw|gist\.github\.com/[^/]+/[^/]+/raw)/[^"\s]+(?:\.json|\.md|\.txt)', resp.text)
                 new_urls.extend(urls)
             time.sleep(1)
         except Exception as e:
@@ -34,7 +33,7 @@ def update_retrieve_urls() -> List[str]:
                 break
     return unique_urls
 
-# 固定 RETRIEVE_URLS（57 个，扩展 + 新检索）
+# 固定 RETRIEVE_URLS（62 个，扩展 + web_search 新源）
 RETRIEVE_URLS = [
     "https://raw.githubusercontent.com/ngo5/IPTV/main/sources.json",
     "https://raw.githubusercontent.com/youhunwl/TVAPP/main/README.md",
@@ -59,11 +58,9 @@ RETRIEVE_URLS = [
     "https://down.nigx.cn/raw.githubusercontent.com/yuanwangokk-1/TV-BOX/refs/heads/main/tvbox/pg/jsm.json",
     "https://raw.githubusercontent.com/gaotianliuyun/gao/master/js.json",
     "https://gist.githubusercontent.com/qoli/0cac366634bfa3a4e6babc84e334b328/raw/VOD.json",
-    "https://cc.cckimi.top/api.php/provide/vod/?ac=list",
     "https://raw.githubusercontent.com/Archmage83/tvapk/main/README.md",
     "https://gitee.com/stbang/live-streaming-source/raw/master/dxaz.json",
     "https://raw.githubusercontent.com/kjxhb/Box/main/m.json",
-    "https://gitcdn.top/https://github.com/liu673cn/box/raw/main/m.json",
     "https://raw.githubusercontent.com/programus/e7f3189da1451ca1f9ce42a0a77f459d/raw/box-config.json",
     "https://raw.githubusercontent.com/lyghgx/tv/main/README.md",
     "https://gitee.com/xlsn0w/tvbox-source-address/raw/master/sources.json",
@@ -88,12 +85,15 @@ RETRIEVE_URLS = [
     "https://raw.githubusercontent.com/Newtxin/TVBoxSource/main/sources.json",
     "https://codeberg.org/sew132/666/raw/branch/main/sources.json",
     "https://raw.githubusercontent.com/liu673cn/box/main/sources.json",
-    # 新添加从检索 (2025 TVBox raw JSON)
-    "https://notabug.org/Tvbox123/TVbox-4/src/master/xq2.json",  # xq2.json TVBox
-    "https://gitlab.com/recha/TVBOX/-/blob/main/recha-media.json",  # recha-media.json
-    "https://github.com/yuanwangokk-1/TV-BOX/raw/main/tvbox/pg/jsm.json",  # jsm.json TV-BOX
-    "https://raw.githubusercontent.com/stbang/live-streaming-source/main/dxaz.json",  # stbang dxaz
-    "https://gitee.com/sew132/666/raw/master/666.json"  # sew132 666
+    "https://notabug.org/Tvbox123/TVbox-4/src/master/xq2.json",
+    "https://gitlab.com/recha/TVBOX/-/blob/main/recha-media.json",
+    "https://github.com/yuanwangokk-1/TV-BOX/raw/main/tvbox/pg/jsm.json",
+    "https://raw.githubusercontent.com/stbang/live-streaming-source/main/dxaz.json",
+    "https://gitee.com/sew132/666/raw/master/666.json",
+    # 新 web_search 提取 (2025 TVBox raw JSON)
+    "https://gist.github.com/MrLYC/b2a03ae9e9fc2d86a7e2a269675a55fb/raw/tvbox.json",  # MrLYC tvbox Gist
+    "https://gist.github.com/pigfoot/2ce619f3cfbbbecffbfa2d38d146c16e/raw/tvbox.json",  # pigfoot tvbox Gist
+    "https://ghp.ci/https://raw.githubusercontent.com/vbskycn/tvbox/a244f6f5c08565a9a0e319d6a3cc2e919d05d893/MY探探.txt"  # vbskycn MY探探 txt
 ]
 
 # 动态更新 RETRIEVE_URLS
@@ -156,7 +156,10 @@ def fetch_new_sources() -> List[Dict[str, str]]:
     return unique_new
 
 def test_api(api_url: str, name: str) -> str:
-    """测试 API（宽松验证，忽略 DNS 错误）"""
+    """测试 API（修复 URL 协议，宽松验证）"""
+    # 修复：添加协议如果缺失
+    if not api_url.startswith(('http://', 'https://')):
+        api_url = 'https://' + api_url
     params = '?ac=videolist&wd=热门' if '?' not in api_url else '&ac=videolist&wd=热门'
     try:
         resp = requests.get(api_url + params, timeout=15, headers={'User-Agent': 'Mozilla/5.0'})
@@ -167,8 +170,8 @@ def test_api(api_url: str, name: str) -> str:
                     return 'available'
             except json.JSONDecodeError:
                 return 'available'
-    except requests.exceptions.DNSResolutionError:
-        print(f"DNS 解析失败 {name}: 跳过")
+    except requests.exceptions.RequestException as e:
+        print(f"请求异常 {name}: {e} - 跳过")
     except Exception:
         pass
     return 'failed'
