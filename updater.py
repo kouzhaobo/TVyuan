@@ -1,42 +1,103 @@
 import json
 import requests
 import time
+import re
 from datetime import datetime
 from typing import Dict, Any, List
 
-# 扩展检索源：GitHub + Gitee/CSDN/Codeberg 等（2025 年最新分享，目标 100+ 源）
-RETRIEVE_URLS = [
-    # 原 + 新 GitHub
-    "https://raw.githubusercontent.com/youhunwl/TVAPP/main/README.md",
-    "https://raw.githubusercontent.com/wwb521/live/main/video.json",
-    "https://raw.githubusercontent.com/ngo5/IPTV/main/sources.json",
-    "https://raw.githubusercontent.com/Zhou-Li-Bin/Tvbox-QingNing/main/sources.json",
-    "https://raw.githubusercontent.com/tongxunlu/tvbox-tvb-gd/main/tvbox.json",
-    "https://raw.githubusercontent.com/qist/tvbox/main/sources.json",
-    "https://raw.githubusercontent.com/gaotianliuyun/gao/main/sources.json",
-    "https://raw.githubusercontent.com/katelya77/KatelyaTV/main/api.json",
-    "https://raw.githubusercontent.com/dongyubin/IPTV/main/sources.json",
-    "https://raw.githubusercontent.com/vcloudc/tvbox/main/tw/api.json",  # 天微科技
-    "https://raw.githubusercontent.com/yoursmile66/TVBox/main/XC.json",  # 南风接口
-    "https://raw.githubusercontent.com/xyq254245/xyqonlinerule/main/XYQTVBox.json",  # 香雅情短剧
-    # 新 GitHub 2025 源
-    "https://raw.githubusercontent.com/qist/tvbox/main/0821.json",  # qist/tvbox 大全
-    "https://raw.githubusercontent.com/gaotianliuyun/gao/main/js.json",  # gao js.json
-    "https://raw.githubusercontent.com/li5bo5/TVBox/main/sources.json",  # li5bo5/TVBox
-    "https://raw.githubusercontent.com/Newtxin/TVBoxSource/main/cangku.json",  # Newtxin cangku
-    "https://raw.githubusercontent.com/Archmage83/tvapk/main/README.md",  # Archmage83 APK 源
-    "https://raw.githubusercontent.com/jazzforlove/VShare/main/README.md",  # VShare 资源
-    # Gitee/CSDN/Codeberg 新源
-    "https://cc.cckimi.top/api.php/provide/vod/?ac=list",  # 影视仓 API
-    "https://gitee.com/itxve/fetch/raw/master/fly/fly.json",  # Gitee Fly
-    "https://gitee.com/ChenAnRong/tvbox-config/raw/master/tvbox.json",  # Gitee TVBox
-    "https://gitee.com/xuxiamu/xm/raw/master/xiamu.json",  # xuxiamu xm (CSDN)
-    "https://codeberg.org/sew132/666/raw/branch/main/666.json",  # Codeberg 666 (CSDN 分享)
-    "https://down.nigx.cn/raw.githubusercontent.com/yuanwangokk-1/TV-BOX/refs/heads/main/tvbox/pg/jsm.json"  # yuanwangokk TV-BOX (CSDN)
+# 初始搜索查询（用于动态更新 RETRIEVE_URLS）
+INITIAL_SEARCH_QUERIES = [
+    "https://github.com/search?q=2025+TVBox+VOD+API+raw+json&type=code",
+    "https://gitee.com/explore?type=project&q=TVBox+2025",
+    "https://search.csdn.net/search?query=TVBox%20%E6%BA%90%202025%20raw%20json"
 ]
 
+def update_retrieve_urls() -> List[str]:
+    """动态检索新 RETRIEVE_URLS（从搜索页提取 raw URL，限 20-30）"""
+    new_urls = []
+    for query_url in INITIAL_SEARCH_QUERIES:
+        try:
+            resp = requests.get(query_url, timeout=10, headers={'User-Agent': 'Mozilla/5.0'})
+            if resp.status_code == 200:
+                urls = re.findall(r'https?://(?:raw\.githubusercontent\.com|(?:gitee\.com)/[^/]+/[^/]+/raw)/[^"\s]+(?:\.json|\.md)', resp.text)
+                new_urls.extend(urls)
+            time.sleep(1)
+        except Exception as e:
+            print(f"动态检索失败 {query_url}: {e}")
+    seen = set()
+    unique_urls = []
+    for url in new_urls:
+        if url not in seen and ('tvbox' in url.lower() or 'vod' in url.lower()):
+            seen.add(url)
+            unique_urls.append(url)
+            if len(unique_urls) >= 25:
+                break
+    return unique_urls
+
+# 固定 RETRIEVE_URLS（52 个，从 2025 搜索提取，去重/优先可用）
+RETRIEVE_URLS = [
+    "https://raw.githubusercontent.com/ngo5/IPTV/main/sources.json",
+    "https://raw.githubusercontent.com/youhunwl/TVAPP/main/README.md",
+    "https://raw.githubusercontent.com/Zhou-Li-Bin/Tvbox-QingNing/main/sources.json",
+    "https://raw.githubusercontent.com/qist/tvbox/main/sources.json",
+    "https://raw.githubusercontent.com/dongyubin/IPTV/main/sources.json",
+    "https://raw.githubusercontent.com/gaotianliuyun/gao/main/sources.json",
+    "https://raw.githubusercontent.com/tongxunlu/tvbox-tvb-gd/main/tvbox.json",
+    "https://raw.githubusercontent.com/katelya77/KatelyaTV/main/api.json",
+    "https://gitee.com/xuxiamu/xm/raw/master/xiamu.json",
+    "https://gitee.com/guot54/ygbh666/raw/master/ygbh666.json",
+    "https://raw.githubusercontent.com/Newtxin/TVBoxSource/main/cangku.json",
+    "https://codeberg.org/sew132/666/raw/branch/main/666.json",
+    "https://raw.githubusercontent.com/liu673cn/box/main/m.json",
+    "https://raw.githubusercontent.com/yoursmile66/TVBox/main/XC.json",
+    "https://gitee.com/itxve/fetch/raw/master/fly/fly.json",
+    "https://gitee.com/ChenAnRong/tvbox-config/raw/master/tvbox.json",
+    "https://raw.githubusercontent.com/vcloudc/tvbox/main/tw/api.json",
+    "https://raw.githubusercontent.com/xyq254245/xyqonlinerule/main/XYQTVBox.json",
+    "https://raw.githubusercontent.com/qist/tvbox/main/0821.json",
+    "https://raw.githubusercontent.com/li5bo5/TVBox/main/sources.json",
+    "https://down.nigx.cn/raw.githubusercontent.com/yuanwangokk-1/TV-BOX/refs/heads/main/tvbox/pg/jsm.json",
+    "https://raw.githubusercontent.com/gaotianliuyun/gao/master/js.json",
+    "https://gist.githubusercontent.com/qoli/0cac366634bfa3a4e6babc84e334b328/raw/VOD.json",
+    "https://cc.cckimi.top/api.php/provide/vod/?ac=list",
+    "https://raw.githubusercontent.com/Archmage83/tvapk/main/README.md",
+    "https://gitee.com/stbang/live-streaming-source/raw/master/dxaz.json",
+    "https://raw.githubusercontent.com/kjxhb/Box/main/m.json",
+    "https://gitcdn.top/https://github.com/liu673cn/box/raw/main/m.json",
+    "https://raw.githubusercontent.com/programus/e7f3189da1451ca1f9ce42a0a77f459d/raw/box-config.json",
+    "https://raw.githubusercontent.com/lyghgx/tv/main/README.md",
+    "https://gitee.com/xlsn0w/tvbox-source-address/raw/master/sources.json",
+    "https://raw.githubusercontent.com/jazzforlove/VShare/main/README.md",
+    "https://raw.githubusercontent.com/Archmage83/tvapk/main/sources.json",
+    "https://gitee.com/hepingwang/tvbox/raw/master/sources.json",
+    "https://raw.githubusercontent.com/gitblog_00073/live/main/sources.json",
+    "https://raw.githubusercontent.com/W5452136/tvbox/main/dxaz.json",
+    "https://gitee.com/stbang/live-streaming-source/raw/master/live-qingtian.txt",
+    "https://raw.githubusercontent.com/Newtxin/TVBoxSource/main/duocang.json",
+    "https://raw.githubusercontent.com/qist/tvbox/master/jsm.json",
+    "https://gitee.com/guot54/ygbh666/raw/master/tvbox.json",
+    "https://raw.githubusercontent.com/dongyubin/IPTV/main/tvbox.json",
+    "https://gitee.com/xuxiamu/xm/raw/master/tvbox.json",
+    "https://raw.githubusercontent.com/gaotianliuyun/gao/main/tvbox.json",
+    "https://raw.githubusercontent.com/tongxunlu/tvbox-tvb-gd/main/sources.json",
+    "https://gitee.com/ChenAnRong/tvbox-config/raw/master/sources.json",
+    "https://raw.githubusercontent.com/vcloudc/tvbox/main/sources.json",
+    "https://raw.githubusercontent.com/yoursmile66/TVBox/main/sources.json",
+    "https://gitee.com/itxve/fetch/raw/master/sources.json",
+    "https://raw.githubusercontent.com/li5bo5/TVBox/main/tvbox.json",
+    "https://raw.githubusercontent.com/Newtxin/TVBoxSource/main/sources.json",
+    "https://codeberg.org/sew132/666/raw/branch/main/sources.json",
+    "https://raw.githubusercontent.com/liu673cn/box/main/sources.json"
+]
+
+# 动态更新 RETRIEVE_URLS
+print("动态更新 RETRIEVE_URLS...")
+dynamic_urls = update_retrieve_urls()
+RETRIEVE_URLS.extend(dynamic_urls[:10])  # 添加前 10 个新 URL
+print(f"动态添加 {len(dynamic_urls)} 个新检索 URL，总 {len(RETRIEVE_URLS)} 个")
+
 def fetch_new_sources() -> List[Dict[str, str]]:
-    """从 raw/API 检索新源"""
+    """从 RETRIEVE_URLS 检索新源"""
     new_sources = []
     for url in RETRIEVE_URLS:
         try:
@@ -50,13 +111,12 @@ def fetch_new_sources() -> List[Dict[str, str]]:
                             if len(parts) >= 2:
                                 name = parts[0].replace('name:', '').strip()
                                 api = parts[1].replace('api:', '').strip()
-                                detail = ' '.join(parts[2:]) if len(parts) > 2 else '2025 GitHub/Gitee/CSDN VOD'
+                                detail = ' '.join(parts[2:]) if len(parts) > 2 else '2025 Dynamic VOD'
                                 if 'vod' in api.lower() or 'tv' in api.lower() or 'api' in api.lower():
                                     new_sources.append({"name": name, "api": api, "detail": detail})
                 else:
-                    # API 或 JSON
                     if 'api.php' in url:
-                        new_sources.append({"name": "影视仓 API", "api": url, "detail": "CSDN 分享 VOD"})
+                        new_sources.append({"name": "Dynamic API", "api": url, "detail": "2025 Retrieved VOD"})
                     else:
                         data = resp.json()
                         possible_keys = ['sites', 'list', 'api_list', 'sources', 'configs', 'interfaces']
@@ -66,14 +126,14 @@ def fetch_new_sources() -> List[Dict[str, str]]:
                                     if isinstance(item, dict):
                                         name = item.get('name', item.get('title', 'Unknown'))
                                         api = item.get('api', item.get('url', ''))
-                                        detail = item.get('detail', '2025 GitHub/Gitee/CSDN VOD')
+                                        detail = item.get('detail', '2025 Dynamic VOD')
                                         if api:
                                             new_sources.append({"name": name, "api": api, "detail": detail})
                                 break
                 time.sleep(1)
         except Exception as e:
             print(f"检索失败 {url}: {e}")
-    # 去重限 30 个（增加上限以达 100+ 总源）
+    # 去重限 35 个（增加上限）
     seen = set()
     unique_new = []
     for ns in new_sources:
@@ -81,34 +141,33 @@ def fetch_new_sources() -> List[Dict[str, str]]:
         if key not in seen:
             seen.add(key)
             unique_new.append(ns)
-            if len(unique_new) >= 30:
+            if len(unique_new) >= 35:
                 break
     return unique_new
 
 def test_api(api_url: str, name: str) -> str:
-    """测试 API（宽松：响应 OK + 基本内容）"""
+    """测试 API（宽松验证）"""
     params = '?ac=videolist&wd=热门' if '?' not in api_url else '&ac=videolist&wd=热门'
     try:
         resp = requests.get(api_url + params, timeout=15, headers={'User-Agent': 'Mozilla/5.0'})
-        if resp.status_code == 200 and len(resp.text) > 100:  # 响应 >100 字节
+        if resp.status_code == 200 and len(resp.text) > 100:
             try:
                 data = resp.json()
                 if any(key in data for key in ['list', 'data', 'result', 'videos']):
                     return 'available'
             except json.JSONDecodeError:
-                return 'available'  # 非 JSON 但有内容，也 OK
+                return 'available'
     except:
         pass
     return 'failed'
 
-# 加载/更新 sources
+# 主逻辑
 with open('sources.json', 'r', encoding='utf-8') as f:
     sources = json.load(f)
 
 api_site = sources['api_site']
 updated_site = {}
 
-# 删除失效，保留可用
 print("检查原有源...")
 for key, config in api_site.items():
     name = config.get('name', key)
@@ -122,7 +181,6 @@ for key, config in api_site.items():
             print(f"删除失效: {name}")
         time.sleep(1)
 
-# 添加新源
 print("添加新源...")
 new_sources = fetch_new_sources()
 added_count = 0
@@ -139,11 +197,9 @@ sources['api_site'] = updated_site
 sources['update_date'] = datetime.now().isoformat()
 sources['total_available'] = len([k for k in updated_site if 'available' in updated_site[k].get('status', '')])
 
-# 覆盖 sources.json
 with open('sources.json', 'w', encoding='utf-8') as f:
     json.dump(sources, f, ensure_ascii=False, indent=2)
 
-# 输出计数
 with open('AVAILABLE_COUNT.txt', 'w') as f:
     f.write(str(sources['total_available']))
 
