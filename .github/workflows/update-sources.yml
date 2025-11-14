@@ -34,5 +34,5 @@ jobs:
       - name: Commit updates
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "全网更新视频源 - Run ID: ${{ github.run_id }} ( ${{ steps.count.outputs.available }} 可用)"
-          file_pattern: '*.json'
+          commit_message: "全网更新视频源 - Run ID: ${{ github.run_id }} ( ${{ steps.count.outputs.available }} 可用源)"
+          file_pattern: 'sources.json'  # 只覆盖 sources.json
