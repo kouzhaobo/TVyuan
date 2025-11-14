@@ -5,7 +5,7 @@ import re
 from datetime import datetime
 from typing import Dict, Any, List
 
-# 初始搜索查询（动态更新，只用 GitHub/Gitee，避免 CSDN SSL 问题）
+# 初始搜索查询（动态更新，只用 GitHub/Gitee，避免 CSDN SSL）
 INITIAL_SEARCH_QUERIES = [
     "https://github.com/search?q=2025+TVBox+VOD+API+raw+json&type=code",
     "https://gitee.com/explore?type=project&q=TVBox+2025"
@@ -33,7 +33,7 @@ def update_retrieve_urls() -> List[str]:
                 break
     return unique_urls
 
-# 固定 RETRIEVE_URLS（62 个，扩展 + web_search 新源）
+# 固定 RETRIEVE_URLS（67 个，扩展 + 工具搜索新源）
 RETRIEVE_URLS = [
     "https://raw.githubusercontent.com/ngo5/IPTV/main/sources.json",
     "https://raw.githubusercontent.com/youhunwl/TVAPP/main/README.md",
@@ -90,10 +90,15 @@ RETRIEVE_URLS = [
     "https://github.com/yuanwangokk-1/TV-BOX/raw/main/tvbox/pg/jsm.json",
     "https://raw.githubusercontent.com/stbang/live-streaming-source/main/dxaz.json",
     "https://gitee.com/sew132/666/raw/master/666.json",
-    # 新 web_search 提取 (2025 TVBox raw JSON)
-    "https://gist.github.com/MrLYC/b2a03ae9e9fc2d86a7e2a269675a55fb/raw/tvbox.json",  # MrLYC tvbox Gist
-    "https://gist.github.com/pigfoot/2ce619f3cfbbbecffbfa2d38d146c16e/raw/tvbox.json",  # pigfoot tvbox Gist
-    "https://ghp.ci/https://raw.githubusercontent.com/vbskycn/tvbox/a244f6f5c08565a9a0e319d6a3cc2e919d05d893/MY探探.txt"  # vbskycn MY探探 txt
+    "https://gist.github.com/MrLYC/b2a03ae9e9fc2d86a7e2a269675a55fb/raw/tvbox.json",
+    "https://gist.github.com/pigfoot/2ce619f3cfbbbecffbfa2d38d146c16e/raw/tvbox.json",
+    "https://ghp.ci/https://raw.githubusercontent.com/vbskycn/tvbox/a244f6f5c08565a9a0e319d6a3cc2e919d05d893/MY探探.txt",
+    # 新工具搜索提取 (2025 TVBox raw JSON)
+    "https://raw.githubusercontent.com/qist/tvbox/master/jsm.json",  # qist jsm
+    "https://gitee.com/stbang/live-streaming-source/raw/master/dxaz.json",  # stbang dxaz
+    "https://raw.githubusercontent.com/Zhou-Li-Bin/Tvbox-QingNing/main/sources.json",  # Zhou-Li-Bin sources
+    "https://raw.githubusercontent.com/zhbjzhql1/TVBox/main/duocang.json",  # zhbjzhql1 duocang
+    "https://raw.githubusercontent.com/programus/e7f3189da1451ca1f9ce42a0a77f459d/raw/box-config.json"  # programus box-config
 ]
 
 # 动态更新 RETRIEVE_URLS
@@ -103,7 +108,7 @@ RETRIEVE_URLS.extend(dynamic_urls[:10])  # 添加前 10 个新 URL
 print(f"动态添加 {len(dynamic_urls)} 个新检索 URL，总 {len(RETRIEVE_URLS)} 个")
 
 def fetch_new_sources() -> List[Dict[str, str]]:
-    """从 RETRIEVE_URLS 检索新源（添加错误处理）"""
+    """从 RETRIEVE_URLS 检索新源（强化错误处理）"""
     new_sources = []
     for url in RETRIEVE_URLS:
         try:
@@ -143,7 +148,7 @@ def fetch_new_sources() -> List[Dict[str, str]]:
             print(f"请求失败 {url}: {e} - 跳过")
         except Exception as e:
             print(f"未知错误 {url}: {e} - 跳过")
-    # 去重限 35 个
+    # 去重限 40 个
     seen = set()
     unique_new = []
     for ns in new_sources:
@@ -151,12 +156,12 @@ def fetch_new_sources() -> List[Dict[str, str]]:
         if key not in seen:
             seen.add(key)
             unique_new.append(ns)
-            if len(unique_new) >= 35:
+            if len(unique_new) >= 40:
                 break
     return unique_new
 
 def test_api(api_url: str, name: str) -> str:
-    """测试 API（修复 URL 协议，宽松验证）"""
+    """测试 API（修复 URL 协议，统一异常处理）"""
     # 修复：添加协议如果缺失
     if not api_url.startswith(('http://', 'https://')):
         api_url = 'https://' + api_url
