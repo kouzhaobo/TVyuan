@@ -97,3 +97,5 @@ with open(filename, 'w', encoding='utf-8') as f:
     json.dump(output, f, ensure_ascii=False, indent=2)
 
 print(f"更新完成: {sources['total_available']} 可用源。保存 {filename}")
+with open('AVAILABLE_COUNT.txt', 'w') as f:
+    f.write(str(sources['total_available']))
