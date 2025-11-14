@@ -19,14 +19,12 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install deps
-        run: pip install requests
-
-      - name: Run updater
-        run: python updater.py
-
-      - name: Commit updates
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "全网更新视频源 - {{ github.run_id }} ({{ sources.total_available }} 可用)"
+     - name: Run updater
+  run: python updater.py
+- name: Read count
+  id: count
+  run: echo "available=$(cat AVAILABLE_COUNT.txt)" >> $GITHUB_OUTPUT
+- name: Commit updates
+  with:
+    commit_message: "全网更新视频源 - Run ID: $$ {{ github.run_id }} ( $${{ steps.count.outputs.available }} 可用)"
           file_pattern: '*.json'
