@@ -2,8 +2,8 @@ name: Crawl Video Sources
 
 on:
   schedule:
-    - cron: '0 0 */7 * *'  # 每 7 天 UTC 时间午夜运行一次（例如，每周日）
-  workflow_dispatch:  # 允许从 GitHub UI 手动触发
+    - cron: '0 0 */7 * *'  # 每 7 天 UTC 午夜运行
+  workflow_dispatch:  # 支持手动触发
 
 jobs:
   crawl:
@@ -12,7 +12,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}  # 用于提交更改
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -30,5 +30,5 @@ jobs:
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Update video sources - {{ github.run_id }} ({{ github.event.head_commit.message }})"
-          file_pattern: videos-*.json  # 只提交新的/更新的 JSON 文件
+          commit_message: "更新视频源 - {{ github.run_id }} (日期: {{ github.event.head_commit.message }})"
+          file_pattern: videos-*.json  # 只提交新 JSON 文件，保留旧文件
