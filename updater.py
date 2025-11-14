@@ -93,12 +93,12 @@ RETRIEVE_URLS = [
     "https://gist.github.com/MrLYC/b2a03ae9e9fc2d86a7e2a269675a55fb/raw/tvbox.json",
     "https://gist.github.com/pigfoot/2ce619f3cfbbbecffbfa2d38d146c16e/raw/tvbox.json",
     "https://ghp.ci/https://raw.githubusercontent.com/vbskycn/tvbox/a244f6f5c08565a9a0e319d6a3cc2e919d05d893/MY探探.txt",
-    # 新工具搜索提取 (2025 TVBox raw JSON)
-    "https://raw.githubusercontent.com/qist/tvbox/master/jsm.json",  # qist jsm
-    "https://gitee.com/stbang/live-streaming-source/raw/master/dxaz.json",  # stbang dxaz
-    "https://raw.githubusercontent.com/Zhou-Li-Bin/Tvbox-QingNing/main/sources.json",  # Zhou-Li-Bin sources
-    "https://raw.githubusercontent.com/zhbjzhql1/TVBox/main/duocang.json",  # zhbjzhql1 duocang
-    "https://raw.githubusercontent.com/programus/e7f3189da1451ca1f9ce42a0a77f459d/raw/box-config.json"  # programus box-config
+    "https://raw.githubusercontent.com/qist/tvbox/master/jsm.json",
+    "https://gitee.com/stbang/live-streaming-source/raw/master/dxaz.json",
+    "https://raw.githubusercontent.com/Zhou-Li-Bin/Tvbox-QingNing/main/sources.json",
+    "https://raw.githubusercontent.com/zhbjzhql1/TVBox/main/duocang.json",
+    "https://raw.githubusercontent.com/programus/e7f3189da1451ca1f9ce42a0a77f459d/raw/box-config.json",
+    "https://raw.githubusercontent.com/qist/tvbox/main/duocang.json"
 ]
 
 # 动态更新 RETRIEVE_URLS
@@ -193,6 +193,10 @@ for key, config in api_site.items():
     name = config.get('name', key)
     api_url = config.get('api', '')
     if api_url:
+        # 新：过滤 'csp_' 开头源，直接删除
+        if api_url.startswith('csp_'):
+            print(f"删除 CSP 内部源: {name}")
+            continue
         status = test_api(api_url, name)
         if status == 'available':
             updated_site[key] = {**config, 'status': 'available'}
