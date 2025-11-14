@@ -5,7 +5,7 @@ import re
 from datetime import datetime
 from typing import Dict, Any, List
 
-# 初始搜索查询（用于动态更新 RETRIEVE_URLS）
+# 初始搜索查询（动态更新 RETRIEVE_URLS）
 INITIAL_SEARCH_QUERIES = [
     "https://github.com/search?q=2025+TVBox+VOD+API+raw+json&type=code",
     "https://gitee.com/explore?type=project&q=TVBox+2025",
@@ -13,13 +13,13 @@ INITIAL_SEARCH_QUERIES = [
 ]
 
 def update_retrieve_urls() -> List[str]:
-    """动态检索新 RETRIEVE_URLS（从搜索页提取 raw URL，限 20-30）"""
+    """动态检索新 RETRIEVE_URLS（从搜索页提取，限 20-30）"""
     new_urls = []
     for query_url in INITIAL_SEARCH_QUERIES:
         try:
             resp = requests.get(query_url, timeout=10, headers={'User-Agent': 'Mozilla/5.0'})
             if resp.status_code == 200:
-                urls = re.findall(r'https?://(?:raw\.githubusercontent\.com|(?:gitee\.com)/[^/]+/[^/]+/raw)/[^"\s]+(?:\.json|\.md)', resp.text)
+                urls = re.findall(r'https?://(?:raw\.githubusercontent\.com|(?:gitee\.com)/[^/]+/[^/]+/raw|notabug\.org/[^/]+/[^/]+/src)/[^"\s]+(?:\.json|\.md)', resp.text)
                 new_urls.extend(urls)
             time.sleep(1)
         except Exception as e:
@@ -34,7 +34,7 @@ def update_retrieve_urls() -> List[str]:
                 break
     return unique_urls
 
-# 固定 RETRIEVE_URLS（52 个，从 2025 搜索提取，去重/优先可用）
+# 固定 RETRIEVE_URLS（57 个，扩展 + 新检索）
 RETRIEVE_URLS = [
     "https://raw.githubusercontent.com/ngo5/IPTV/main/sources.json",
     "https://raw.githubusercontent.com/youhunwl/TVAPP/main/README.md",
@@ -87,7 +87,13 @@ RETRIEVE_URLS = [
     "https://raw.githubusercontent.com/li5bo5/TVBox/main/tvbox.json",
     "https://raw.githubusercontent.com/Newtxin/TVBoxSource/main/sources.json",
     "https://codeberg.org/sew132/666/raw/branch/main/sources.json",
-    "https://raw.githubusercontent.com/liu673cn/box/main/sources.json"
+    "https://raw.githubusercontent.com/liu673cn/box/main/sources.json",
+    # 新添加从检索 (2025 TVBox raw JSON)
+    "https://notabug.org/Tvbox123/TVbox-4/src/master/xq2.json",  # xq2.json TVBox
+    "https://gitlab.com/recha/TVBOX/-/blob/main/recha-media.json",  # recha-media.json
+    "https://github.com/yuanwangokk-1/TV-BOX/raw/main/tvbox/pg/jsm.json",  # jsm.json TV-BOX
+    "https://raw.githubusercontent.com/stbang/live-streaming-source/main/dxaz.json",  # stbang dxaz
+    "https://gitee.com/sew132/666/raw/master/666.json"  # sew132 666
 ]
 
 # 动态更新 RETRIEVE_URLS
@@ -97,7 +103,7 @@ RETRIEVE_URLS.extend(dynamic_urls[:10])  # 添加前 10 个新 URL
 print(f"动态添加 {len(dynamic_urls)} 个新检索 URL，总 {len(RETRIEVE_URLS)} 个")
 
 def fetch_new_sources() -> List[Dict[str, str]]:
-    """从 RETRIEVE_URLS 检索新源"""
+    """从 RETRIEVE_URLS 检索新源（添加错误处理）"""
     new_sources = []
     for url in RETRIEVE_URLS:
         try:
@@ -131,9 +137,13 @@ def fetch_new_sources() -> List[Dict[str, str]]:
                                             new_sources.append({"name": name, "api": api, "detail": detail})
                                 break
                 time.sleep(1)
+        except json.JSONDecodeError as e:
+            print(f"JSON 解析失败 {url}: {e} - 跳过")
+        except requests.exceptions.RequestException as e:
+            print(f"请求失败 {url}: {e} - 跳过")
         except Exception as e:
-            print(f"检索失败 {url}: {e}")
-    # 去重限 35 个（增加上限）
+            print(f"未知错误 {url}: {e} - 跳过")
+    # 去重限 35 个
     seen = set()
     unique_new = []
     for ns in new_sources:
@@ -146,7 +156,7 @@ def fetch_new_sources() -> List[Dict[str, str]]:
     return unique_new
 
 def test_api(api_url: str, name: str) -> str:
-    """测试 API（宽松验证）"""
+    """测试 API（宽松验证，忽略 DNS 错误）"""
     params = '?ac=videolist&wd=热门' if '?' not in api_url else '&ac=videolist&wd=热门'
     try:
         resp = requests.get(api_url + params, timeout=15, headers={'User-Agent': 'Mozilla/5.0'})
@@ -157,7 +167,9 @@ def test_api(api_url: str, name: str) -> str:
                     return 'available'
             except json.JSONDecodeError:
                 return 'available'
-    except:
+    except requests.exceptions.DNSResolutionError:
+        print(f"DNS 解析失败 {name}: 跳过")
+    except Exception:
         pass
     return 'failed'
 
