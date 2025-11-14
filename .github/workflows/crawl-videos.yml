@@ -1,0 +1,34 @@
+name: Crawl Video Sources
+
+on:
+  schedule:
+    - cron: '0 0 */7 * *'  # 每 7 天 UTC 时间午夜运行一次（例如，每周日）
+  workflow_dispatch:  # 允许从 GitHub UI 手动触发
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}  # 用于提交更改
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Run crawl script
+        run: python crawl.py
+
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update video sources - {{ github.run_id }} ({{ github.event.head_commit.message }})"
+          file_pattern: videos-*.json  # 只提交新的/更新的 JSON 文件
