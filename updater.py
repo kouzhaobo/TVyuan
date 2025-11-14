@@ -4,9 +4,9 @@ import time
 from datetime import datetime
 from typing import Dict, Any, List
 
-# 扩展检索源：GitHub + CSDN/Gitee/Zhihu 等（2025 年最新分享）
+# 扩展检索源：GitHub + Gitee/CSDN/Codeberg 等（2025 年最新分享，目标 100+ 源）
 RETRIEVE_URLS = [
-    # 原 GitHub
+    # 原 + 新 GitHub
     "https://raw.githubusercontent.com/youhunwl/TVAPP/main/README.md",
     "https://raw.githubusercontent.com/wwb521/live/main/video.json",
     "https://raw.githubusercontent.com/ngo5/IPTV/main/sources.json",
@@ -16,13 +16,23 @@ RETRIEVE_URLS = [
     "https://raw.githubusercontent.com/gaotianliuyun/gao/main/sources.json",
     "https://raw.githubusercontent.com/katelya77/KatelyaTV/main/api.json",
     "https://raw.githubusercontent.com/dongyubin/IPTV/main/sources.json",
-    # 新：CSDN/Gitee/Zhihu 分享源
-    "https://raw.githubusercontent.com/vcloudc/tvbox/main/tw/api.json",  # 天微科技 (CSDN 分享)
-    "https://raw.githubusercontent.com/yoursmile66/TVBox/main/XC.json",  # 南风接口 (CSDN)
-    "https://cc.cckimi.top/api.php/provide/vod/?ac=list",  # 影视仓 API (CSDN 博客)
-    "https://gitee.com/itxve/fetch/raw/master/fly/fly.json",  # Gitee Fly 源 (Zhihu 提及)
-    "https://gitee.com/ChenAnRong/tvbox-config/raw/master/tvbox.json",  # Gitee TVBox 配置
-    "https://raw.githubusercontent.com/xyq254245/xyqonlinerule/main/XYQTVBox.json"  # 香雅情短剧 (CSDN)
+    "https://raw.githubusercontent.com/vcloudc/tvbox/main/tw/api.json",  # 天微科技
+    "https://raw.githubusercontent.com/yoursmile66/TVBox/main/XC.json",  # 南风接口
+    "https://raw.githubusercontent.com/xyq254245/xyqonlinerule/main/XYQTVBox.json",  # 香雅情短剧
+    # 新 GitHub 2025 源
+    "https://raw.githubusercontent.com/qist/tvbox/main/0821.json",  # qist/tvbox 大全
+    "https://raw.githubusercontent.com/gaotianliuyun/gao/main/js.json",  # gao js.json
+    "https://raw.githubusercontent.com/li5bo5/TVBox/main/sources.json",  # li5bo5/TVBox
+    "https://raw.githubusercontent.com/Newtxin/TVBoxSource/main/cangku.json",  # Newtxin cangku
+    "https://raw.githubusercontent.com/Archmage83/tvapk/main/README.md",  # Archmage83 APK 源
+    "https://raw.githubusercontent.com/jazzforlove/VShare/main/README.md",  # VShare 资源
+    # Gitee/CSDN/Codeberg 新源
+    "https://cc.cckimi.top/api.php/provide/vod/?ac=list",  # 影视仓 API
+    "https://gitee.com/itxve/fetch/raw/master/fly/fly.json",  # Gitee Fly
+    "https://gitee.com/ChenAnRong/tvbox-config/raw/master/tvbox.json",  # Gitee TVBox
+    "https://gitee.com/xuxiamu/xm/raw/master/xiamu.json",  # xuxiamu xm (CSDN)
+    "https://codeberg.org/sew132/666/raw/branch/main/666.json",  # Codeberg 666 (CSDN 分享)
+    "https://down.nigx.cn/raw.githubusercontent.com/yuanwangokk-1/TV-BOX/refs/heads/main/tvbox/pg/jsm.json"  # yuanwangokk TV-BOX (CSDN)
 ]
 
 def fetch_new_sources() -> List[Dict[str, str]]:
@@ -35,36 +45,35 @@ def fetch_new_sources() -> List[Dict[str, str]]:
                 if url.endswith('.md'):
                     lines = resp.text.split('\n')
                     for line in lines:
-                        if 'name,' in line or 'api:' in line:
+                        if 'name,' in line or 'api:' in line or '接口' in line:
                             parts = [p.strip() for p in line.split(',') if p.strip()]
                             if len(parts) >= 2:
                                 name = parts[0].replace('name:', '').strip()
                                 api = parts[1].replace('api:', '').strip()
-                                detail = ' '.join(parts[2:]) if len(parts) > 2 else '2025 CSDN/Gitee VOD'
-                                if 'vod' in api.lower() or 'tv' in api.lower():
+                                detail = ' '.join(parts[2:]) if len(parts) > 2 else '2025 GitHub/Gitee/CSDN VOD'
+                                if 'vod' in api.lower() or 'tv' in api.lower() or 'api' in api.lower():
                                     new_sources.append({"name": name, "api": api, "detail": detail})
                 else:
                     # API 或 JSON
                     if 'api.php' in url:
-                        # 直接用 URL 作为源（假设是列表 API）
                         new_sources.append({"name": "影视仓 API", "api": url, "detail": "CSDN 分享 VOD"})
                     else:
                         data = resp.json()
-                        possible_keys = ['sites', 'list', 'api_list', 'sources']
+                        possible_keys = ['sites', 'list', 'api_list', 'sources', 'configs', 'interfaces']
                         for key in possible_keys:
                             if key in data and isinstance(data[key], list):
                                 for item in data[key]:
                                     if isinstance(item, dict):
                                         name = item.get('name', item.get('title', 'Unknown'))
                                         api = item.get('api', item.get('url', ''))
-                                        detail = item.get('detail', '2025 CSDN/Gitee VOD')
+                                        detail = item.get('detail', '2025 GitHub/Gitee/CSDN VOD')
                                         if api:
                                             new_sources.append({"name": name, "api": api, "detail": detail})
                                 break
                 time.sleep(1)
         except Exception as e:
             print(f"检索失败 {url}: {e}")
-    # 去重限 20 个
+    # 去重限 30 个（增加上限以达 100+ 总源）
     seen = set()
     unique_new = []
     for ns in new_sources:
@@ -72,7 +81,7 @@ def fetch_new_sources() -> List[Dict[str, str]]:
         if key not in seen:
             seen.add(key)
             unique_new.append(ns)
-            if len(unique_new) >= 20:
+            if len(unique_new) >= 30:
                 break
     return unique_new
 
