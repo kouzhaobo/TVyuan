@@ -478,6 +478,156 @@
         "fantuanyingshi": {
             "api": "https://www.fantuan.tv/api.php/provide/vod/",
             "name": "饭团影视"
+        },
+        "new_api_1": {
+            "name": "肥猫备用接口",
+            "api": "http://feimao.com",
+            "detail": "TVBox 备用点播源，支持全网影视"
+        },
+        "new_api_2": {
+            "name": "饭太硬主接口",
+            "api": "http://www.fantaiying.com/tv",
+            "detail": "多线路影视源，免费高清"
+        },
+        "new_api_3": {
+            "name": "饭太硬备用1",
+            "api": "http://www.fantaiying.net/tv",
+            "detail": "备用线路，包含 18+ 资源"
+        },
+        "new_api_4": {
+            "name": "毒盒接口",
+            "api": "https://duduh.com/tv",
+            "detail": "综合 VOD，快速更新"
+        },
+        "new_api_5": {
+            "name": "小盒子4K",
+            "api": "http://xhztv.top/4k.json",
+            "detail": "4K 高清视频源"
+        },
+        "new_api_6": {
+            "name": "欧歌免费",
+            "api": "https://tv.nxog.top/m/111.php?ou=公众号欧歌app&mz=index&jar=index&123&b=tv",
+            "detail": "免费线路，央视+影视"
+        },
+        "new_api_7": {
+            "name": "蓝天Luck（央视）",
+            "api": "https://gitee.com/lukei7/lib/raw/Luck/%E8%87%AA%E5%BB%BA.json",
+            "detail": "央视大全，直播+点播"
+        },
+        "new_api_8": {
+            "name": "小米接口",
+            "api": "http://www.mpanso.com/小米/DEMO.json",
+            "detail": "小米兼容源"
+        },
+        "new_api_9": {
+            "name": "王二小接口",
+            "api": "http://tvbox.xn--4kq62z5rby2qupq9ub.top/",
+            "detail": "公众号分享源"
+        },
+        "new_api_10": {
+            "name": "爱TV吧（含央视）",
+            "api": "https://700sjro44343.vicp.fun/vip/vip/tv.json",
+            "detail": "央视+成人资源"
+        },
+        "new_api_11": {
+            "name": "OK吊炸天",
+            "api": "http://ok321.top/tv",
+            "detail": "蜂蜜兼容，高清"
+        },
+        "new_api_12": {
+            "name": "巧技接口",
+            "api": "http://cdn.qiaoji8.com/tvbox.json",
+            "detail": "巧技源，短剧支持"
+        },
+        "new_api_13": {
+            "name": "欧歌单线路",
+            "api": "https://xn--xkkx-rp5imh.v.nxog.top/api.php?id=3",
+            "detail": "单线路优化"
+        },
+        "new_api_14": {
+            "name": "菜妮丝XBPQ",
+            "api": "https://tv.xn--yhqu5zs87a.top",
+            "detail": "多类型 VOD"
+        },
+        "new_api_15": {
+            "name": "摸鱼儿接口",
+            "api": "http://woshinshi.moyuer.com",
+            "detail": "摸鱼儿源"
+        },
+        "new_api_16": {
+            "name": "天微科技",
+            "api": "https://github.moeyy.xyz/https://raw.githubusercontent.com/vcloudc/tvbox/main/tw/api.json",
+            "detail": "天微 API"
+        },
+        "new_api_17": {
+            "name": "二月红接口",
+            "api": "https://700sjro44343.vicp.fun/eggp/0211/tv.json",
+            "detail": "二月红更新源"
+        },
+        "new_api_18": {
+            "name": "传说blog",
+            "api": "https://chuanshuo.77blog.cn/tv.json",
+            "detail": "Blog 分享源"
+        },
+        "new_api_19": {
+            "name": "青龙接口",
+            "api": "https://gitee.com/yiwu369/6758/raw/master/%E9%9D%92%E9%BE%99/1.json",
+            "detail": "青龙 VOD"
+        },
+        "new_api_20": {
+            "name": "香雅情短剧",
+            "api": "http://74.120.175.78/JK/XYQTVBox/dj.json",
+            "detail": "短剧专区"
+        },
+        "new_api_21": {
+            "name": "短剧频道",
+            "api": "http://box.ufuzi.com/tv/qq/短剧频道/api.json",
+            "detail": "QQ 短剧源"
+        },
+        "new_api_22": {
+            "name": "少儿频道",
+            "api": "https://jihulab.com/ymz1231/xymz/-/raw/main/ymshaoer",
+            "detail": "少儿内容"
+        },
+        "new_api_23": {
+            "name": "俊哥接口",
+            "api": "http://home.jundie.top:81/top98.json",
+            "detail": "俊哥分享"
+        },
+        "new_api_24": {
+            "name": "4K云盘",
+            "api": "https://9xi4o.tk/0725.json",
+            "detail": "4K 云盘源"
+        },
+        "new_api_25": {
+            "name": "巧儿接口",
+            "api": "http://pandown.pro/tvbox/tvbox.json",
+            "detail": "巧儿 VOD"
+        },
+        "new_api_26": {
+            "name": "胖虎接口",
+            "api": "https://notabug.org/imbig66/tv-spider-man/raw/master/%E9%85%8D%E7%BD%AE/0801.json",
+            "detail": "胖虎源"
+        },
+        "new_api_27": {
+            "name": "黄金分割",
+            "api": "https://gitlab.com/lzc1021lzc/hjfggzs.hjys/-/raw/main/hjys.free.json",
+            "detail": "黄金分割免费"
+        },
+        "new_api_28": {
+            "name": "ocean2025",
+            "api": "https://git.acwing.com/ocean2025/ocean/-/raw/main/api.json",
+            "detail": "2025 新源"
+        },
+        "new_api_29": {
+            "name": "驸马影视",
+            "api": "http://fmys.top/fmys.json",
+            "detail": "驸马接口"
+        },
+        "new_api_30": {
+            "name": "林少接口",
+            "api": "https://ghproxy.net/https://raw.githubusercontent.com/xiaolinshao/linshao/main/1.json",
+            "detail": "林少源"
         }
     }
 }
