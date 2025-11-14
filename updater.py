@@ -12,7 +12,7 @@ INITIAL_SEARCH_QUERIES = [
 ]
 
 def update_retrieve_urls() -> List[str]:
-    """动态检索新 RETRIEVE_URLS（从搜索页提取，限 15 个）"""
+    """动态检索新 RETRIEVE_URLS（从搜索页提取，限 20-30）"""
     new_urls = []
     for query_url in INITIAL_SEARCH_QUERIES:
         try:
@@ -29,11 +29,11 @@ def update_retrieve_urls() -> List[str]:
         if url not in seen and ('tvbox' in url.lower() or 'vod' in url.lower()):
             seen.add(url)
             unique_urls.append(url)
-            if len(unique_urls) >= 15:
+            if len(unique_urls) >= 25:
                 break
     return unique_urls
 
-# 固定 RETRIEVE_URLS（40 个稳定源，优先可用率高）
+# 固定 RETRIEVE_URLS（32 个稳定源，删除失效）
 RETRIEVE_URLS = [
     "https://raw.githubusercontent.com/ngo5/IPTV/main/sources.json",
     "https://raw.githubusercontent.com/youhunwl/TVAPP/main/README.md",
@@ -46,12 +46,10 @@ RETRIEVE_URLS = [
     "https://gitee.com/xuxiamu/xm/raw/master/xiamu.json",
     "https://gitee.com/guot54/ygbh666/raw/master/ygbh666.json",
     "https://raw.githubusercontent.com/Newtxin/TVBoxSource/main/cangku.json",
-    "https://raw.githubusercontent.com/liu673cn/box/main/m.json",
-    "https://gitee.com/itxve/fetch/raw/master/fly/fly.json",
+    "https://codeberg.org/sew132/666/raw/branch/main/666.json",
     "https://gitee.com/ChenAnRong/tvbox-config/raw/master/tvbox.json",
     "https://raw.githubusercontent.com/vcloudc/tvbox/main/tw/api.json",
     "https://raw.githubusercontent.com/qist/tvbox/main/0821.json",
-    "https://raw.githubusercontent.com/li5bo5/TVBox/main/sources.json",
     "https://raw.githubusercontent.com/gaotianliuyun/gao/master/js.json",
     "https://gist.githubusercontent.com/qoli/0cac366634bfa3a4e6babc84e334b328/raw/VOD.json",
     "https://raw.githubusercontent.com/Archmage83/tvapk/main/README.md",
@@ -63,17 +61,12 @@ RETRIEVE_URLS = [
     "https://raw.githubusercontent.com/jazzforlove/VShare/main/README.md",
     "https://raw.githubusercontent.com/Archmage83/tvapk/main/sources.json",
     "https://gitee.com/hepingwang/tvbox/raw/master/sources.json",
-    "https://raw.githubusercontent.com/gitblog_00073/live/main/sources.json",
-    "https://raw.githubusercontent.com/W5452136/tvbox/main/dxaz.json",
-    "https://raw.githubusercontent.com/Newtxin/TVBoxSource/main/duocang.json",
     "https://raw.githubusercontent.com/qist/tvbox/master/jsm.json",
     "https://gitee.com/guot54/ygbh666/raw/master/tvbox.json",
     "https://raw.githubusercontent.com/dongyubin/IPTV/main/tvbox.json",
     "https://gitee.com/xuxiamu/xm/raw/master/tvbox.json",
     "https://raw.githubusercontent.com/gaotianliuyun/gao/main/tvbox.json",
-    "https://gitee.com/ChenAnRong/tvbox-config/raw/master/sources.json",
-    "https://raw.githubusercontent.com/vcloudc/tvbox/main/sources.json",
-    "https://raw.githubusercontent.com/yoursmile66/TVBox/main/sources.json"
+    "https://gitee.com/ChenAnRong/tvbox-config/raw/master/sources.json"
 ]
 
 # 动态更新 RETRIEVE_URLS
