@@ -49,12 +49,6 @@
       "detail": "",
       "status": "available"
     },
-    "api_9": {
-      "name": "TV-丫丫点播",
-      "api": "https://cj.yayazy.net/api.php/provide/vod",
-      "detail": "https://cj.yayazy.net",
-      "status": "available"
-    },
     "api_10": {
       "name": "TV-光速资源",
       "api": "https://api.guangsuapi.com/api.php/provide/vod",
@@ -145,46 +139,16 @@
       "detail": "https://api.zuidapi.com",
       "status": "available"
     },
-    "api_26": {
-      "name": "TV-樱花资源",
-      "api": "https://m3u8.apiyhzy.com/api.php/provide/vod",
-      "detail": "",
-      "status": "available"
-    },
-    "api_27": {
-      "name": "TV-步步高资源",
-      "api": "https://api.yparse.com/api/json",
-      "detail": "",
-      "status": "available"
-    },
-    "api_28": {
-      "name": "TV-牛牛点播",
-      "api": "https://api.niuniuzy.me/api.php/provide/vod",
-      "detail": "https://api.niuniuzy.me",
-      "status": "available"
-    },
     "api_30": {
       "name": "AV-百万资源",
       "api": "https://api.bwzyz.com/api.php/provide/vod",
       "detail": "https://api.bwzyz.com",
       "status": "available"
     },
-    "api_31": {
-      "name": "TV-百度云资源",
-      "api": "https://api.apibdzy.com/api.php/provide/vod",
-      "detail": "https://api.apibdzy.com",
-      "status": "available"
-    },
     "api_32": {
       "name": "TV-神马云",
       "api": "https://api.1080zyku.com/inc/apijson.php/",
       "detail": "https://api.1080zyku.com",
-      "status": "available"
-    },
-    "api_33": {
-      "name": "TV-索尼资源",
-      "api": "https://suoniapi.com/api.php/provide/vod",
-      "detail": "",
       "status": "available"
     },
     "api_34": {
@@ -217,12 +181,6 @@
       "detail": "https://dbzy.tv",
       "status": "available"
     },
-    "api_39": {
-      "name": "TV-豪华资源",
-      "api": "https://hhzyapi.com/api.php/provide/vod",
-      "detail": "https://hhzyapi.com",
-      "status": "available"
-    },
     "api_40": {
       "name": "TV-速博资源",
       "api": "https://subocaiji.com/api.php/provide/vod",
@@ -247,22 +205,10 @@
       "detail": "https://jyzyapi.com",
       "status": "available"
     },
-    "api_44": {
-      "name": "TV-閃電资源",
-      "api": "https://sdzyapi.com/api.php/provide/vod",
-      "detail": "https://sdzyapi.com",
-      "status": "available"
-    },
     "api_46": {
       "name": "TV-飘零资源",
       "api": "https://p2100.net/api.php/provide/vod",
       "detail": "https://p2100.net",
-      "status": "available"
-    },
-    "api_47": {
-      "name": "TV-魔爪资源",
-      "api": "https://mozhuazy.com/api.php/provide/vod",
-      "detail": "https://mozhuazy.com",
       "status": "available"
     },
     "api_48": {
@@ -305,12 +251,6 @@
       "name": "AV-乐播资源",
       "api": "https://lbapi9.com/api.php/provide/vod",
       "detail": "",
-      "status": "available"
-    },
-    "api_57": {
-      "name": "AV-奥斯卡资源",
-      "api": "https://aosikazy.com/api.php/provide/vod",
-      "detail": "https://aosikazy.com",
       "status": "available"
     },
     "api_58": {
@@ -373,12 +313,6 @@
       "detail": "https://api.sexnguon.com",
       "status": "available"
     },
-    "api_68": {
-      "name": "AV-色猫资源",
-      "api": "https://api.maozyapi.com/inc/apijson_vod.php",
-      "detail": "https://api.maozyapi.com",
-      "status": "available"
-    },
     "api_69": {
       "name": "AV-辣椒资源",
       "api": "https://apilj.com/api.php/provide/vod",
@@ -409,11 +343,6 @@
       "detail": "https://jszyapi.com",
       "status": "available"
     },
-    "mozhua": {
-      "name": "魔爪资源",
-      "api": "https://mozhuazy.com/api.php/provide/vod",
-      "status": "available"
-    },
     "mdzy": {
       "name": "魔都资源",
       "api": "https://www.mdzyapi.com/api.php/provide/vod",
@@ -439,24 +368,9 @@
       "api": "https://www.hongniuzy3.com/api.php/provide/vod",
       "status": "available"
     },
-    "suonisandian": {
-      "name": "索尼-闪电资源",
-      "api": "https://xsd.sdzyapi.com/api.php/provide/vod",
-      "status": "available"
-    },
-    "yayaziyuan": {
-      "name": "鸭鸭资源",
-      "api": "https://cj.yayazy.net/api.php/provide/vod",
-      "status": "available"
-    },
     "jinyingziyuan": {
       "name": "金鹰资源采集网",
       "api": "https://jyzyapi.com/provide/vod",
-      "status": "available"
-    },
-    "dadiziy": {
-      "name": "大地资源网络",
-      "api": "https://dadiapi.com/api.php/provide/vod",
       "status": "available"
     },
     "huangseziy": {
@@ -474,11 +388,6 @@
       "api": "https://api.xinlangapi.com/xinlangapi.php/provide/vod",
       "status": "available"
     },
-    "youzhidianying": {
-      "name": "优质资源库1080zyk6.com高清",
-      "api": "https://api.yzzy-api.com/inc/ldg_api_all.php/provide/vod",
-      "status": "available"
-    },
     "xibaocaiji": {
       "name": "细胞采集黄色",
       "api": "https://www.xxibaozyw.com/api.php/provide/vod",
@@ -488,152 +397,8 @@
       "name": "影视工厂",
       "api": "https://cj.lziapi.com/api.php/provide/vod/",
       "status": "available"
-    },
-    "new_api_3": {
-      "name": "肥猫",
-      "api": "http://肥猫.com",
-      "detail": "TVBox 备用 VOD",
-      "status": "available"
-    },
-    "new_api_5": {
-      "name": "毒盒",
-      "api": "https://毒盒.com/tv/",
-      "detail": "综合 VOD",
-      "status": "available"
-    },
-    "new_api_7": {
-      "name": "俊佬",
-      "api": "http://home.jundie.top:81/top98.json",
-      "detail": "分享源",
-      "status": "available"
-    },
-    "new_api_8": {
-      "name": "道长",
-      "api": "https://cdn.gitmirror.com/bb/xduo/libs/master/index.json",
-      "detail": "VOD 配置",
-      "status": "available"
-    },
-    "new_api_9": {
-      "name": "PG接口",
-      "api": "https://cnb.cool/fish2018/pg/-/git/raw/master/jsm.json",
-      "detail": "单仓",
-      "status": "available"
-    },
-    "new_api_12": {
-      "name": "南风",
-      "api": "https://raw.githubusercontent.com/yoursmile66/TVBox/main/XC.json",
-      "detail": "单仓",
-      "status": "available"
-    },
-    "new_api_15": {
-      "name": "HG接口",
-      "api": "https://api.hgyx.vip/hgyx.json",
-      "detail": "VOD",
-      "status": "available"
-    },
-    "new_api_16": {
-      "name": "dxawi",
-      "api": "https://dxawi.github.io/0/0.json",
-      "detail": "单仓",
-      "status": "available"
-    },
-    "new_api_18": {
-      "name": "小盒子单仓",
-      "api": "http://xhztv.top/xhz",
-      "detail": "TVBox",
-      "status": "available"
-    },
-    "new_api_19": {
-      "name": "小盒子4K",
-      "api": "http://xhztv.top/4k.json",
-      "detail": "4K VOD",
-      "status": "available"
-    },
-    "new_api_20": {
-      "name": "潇洒接口",
-      "api": "https://raw.githubusercontent.com/PizazzGY/TVBox/main/api.json",
-      "detail": "分享",
-      "status": "available"
-    },
-    "new_api_22": {
-      "name": "小苹果接口",
-      "api": "https://bitbucket.org/xduo/duoapi/raw/master/xpg.json",
-      "detail": "接口",
-      "status": "available"
-    },
-    "new_api_73": {
-      "name": "美少女",
-      "api": "https://www.msnii.com/api/xml.php",
-      "detail": "AV 2025 更新",
-      "status": "new_available"
-    },
-    "new_api_74": {
-      "name": "淫水机",
-      "api": "https://www.xrbsp.com/api/xml.php",
-      "detail": "AV 2025 更新",
-      "status": "new_available"
-    },
-    "new_api_75": {
-      "name": "香奶儿",
-      "api": "https://www.gdlsp.com/api/xml.php",
-      "detail": "AV 2025 更新",
-      "status": "new_available"
-    },
-    "new_api_76": {
-      "name": "白嫖",
-      "api": "https://www.kxgav.com/api/xml.php",
-      "detail": "AV 2025 更新",
-      "status": "new_available"
-    },
-    "new_api_77": {
-      "name": "黄AV",
-      "api": "https://www.pgxdy.com/api/xml.php",
-      "detail": "AV 2025 更新",
-      "status": "new_available"
-    },
-    "new_api_78": {
-      "name": "成人01",
-      "api": "http://dadiapi.com/api.php",
-      "detail": "AV 2025 更新",
-      "status": "new_available"
-    },
-    "new_api_79": {
-      "name": "成人03",
-      "api": "https://www.gdlsp.com/api/xml.php",
-      "detail": "AV 2025 更新",
-      "status": "new_available"
-    },
-    "new_api_80": {
-      "name": "成人04",
-      "api": "https://www.msnii.com/api/xml.php",
-      "detail": "AV 2025 更新",
-      "status": "new_available"
-    },
-    "new_api_81": {
-      "name": "成人05",
-      "api": "https://www.xrbsp.com/api/xml.php",
-      "detail": "AV 2025 更新",
-      "status": "new_available"
-    },
-    "new_api_82": {
-      "name": "成人06",
-      "api": "https://www.xrbsp.com/api/xml.php",
-      "detail": "AV 2025 更新",
-      "status": "new_available"
-    },
-    "new_api_83": {
-      "name": "成人07",
-      "api": "http://dadiapi.com/api.php",
-      "detail": "AV 2025 更新",
-      "status": "new_available"
-    },
-    "new_api_84": {
-      "name": "成人09",
-      "api": "https://www.xrbsp.com/api/xml.php",
-      "detail": "AV 2025 更新",
-      "status": "new_available"
     }
   },
-  "update_date": "2025-11-14T14:10:25.811575",
-  "total_available": 96
+  "update_date": "2025-11-14T14:27:25.352612",
+  "total_available": 68
 }
