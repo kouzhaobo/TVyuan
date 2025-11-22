@@ -55,12 +55,6 @@
       "detail": "https://tyyszy.com",
       "status": "available"
     },
-    "api_15": {
-      "name": "TV-如意资源",
-      "api": "https://cj.rycjapi.com/api.php/provide/vod",
-      "detail": "",
-      "status": "available"
-    },
     "api_17": {
       "name": "TV-新浪点播",
       "api": "https://api.xinlangapi.com/xinlangapi.php/provide/vod",
@@ -484,6 +478,6 @@
       "status": "available"
     }
   },
-  "update_date": "2025-11-15T02:10:49.497010",
-  "total_available": 82
+  "update_date": "2025-11-22T02:03:44.667268",
+  "total_available": 81
 }
