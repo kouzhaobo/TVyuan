@@ -145,18 +145,6 @@
       "detail": "",
       "status": "available"
     },
-    "api_42": {
-      "name": "TV-金鹰点播",
-      "api": "https://jinyingzy.com/api.php/provide/vod",
-      "detail": "https://jinyingzy.com",
-      "status": "available"
-    },
-    "api_43": {
-      "name": "TV-金鹰资源",
-      "api": "https://jyzyapi.com/api.php/provide/vod",
-      "detail": "https://jyzyapi.com",
-      "status": "available"
-    },
     "api_46": {
       "name": "TV-飘零资源",
       "api": "https://p2100.net/api.php/provide/vod",
@@ -466,6 +454,6 @@
       "status": "available"
     }
   },
-  "update_date": "2025-12-22T02:27:55.401566",
-  "total_available": 79
+  "update_date": "2025-12-29T02:32:23.949078",
+  "total_available": 77
 }
