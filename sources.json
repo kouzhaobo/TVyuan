@@ -181,12 +181,6 @@
       "detail": "",
       "status": "available"
     },
-    "api_58": {
-      "name": "AV-奶香香",
-      "api": "https://Naixxzy.com/api.php/provide/vod",
-      "detail": "https://Naixxzy.com",
-      "status": "available"
-    },
     "api_59": {
       "name": "AV-森林资源",
       "api": "https://slapibf.com/api.php/provide/vod",
@@ -448,6 +442,6 @@
       "status": "available"
     }
   },
-  "update_date": "2026-02-01T03:25:12.306002",
-  "total_available": 76
+  "update_date": "2026-02-08T03:30:36.454436",
+  "total_available": 75
 }
