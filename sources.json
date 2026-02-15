@@ -37,12 +37,6 @@
       "detail": "",
       "status": "available"
     },
-    "api_10": {
-      "name": "TV-光速资源",
-      "api": "https://api.guangsuapi.com/api.php/provide/vod",
-      "detail": "https://api.guangsuapi.com",
-      "status": "available"
-    },
     "api_17": {
       "name": "TV-新浪点播",
       "api": "https://api.xinlangapi.com/xinlangapi.php/provide/vod",
@@ -107,12 +101,6 @@
       "name": "TV-茅台资源",
       "api": "https://caiji.maotaizy.cc/api.php/provide/vod",
       "detail": "https://caiji.maotaizy.cc",
-      "status": "available"
-    },
-    "api_36": {
-      "name": "TV-虎牙资源",
-      "api": "https://www.huyaapi.com/api.php/provide/vod",
-      "detail": "https://www.huyaapi.com",
       "status": "available"
     },
     "api_37": {
@@ -284,11 +272,6 @@
       "api": "https://www.hongniuzy3.com/api.php/provide/vod",
       "status": "available"
     },
-    "jinyingziyuan": {
-      "name": "金鹰资源采集网",
-      "api": "https://jyzyapi.com/provide/vod",
-      "status": "available"
-    },
     "xiaojiziy": {
       "name": "小鸡资源",
       "api": "https://api.xiaojizy.live/provide/vod",
@@ -442,6 +425,6 @@
       "status": "available"
     }
   },
-  "update_date": "2026-02-08T03:30:36.454436",
-  "total_available": 75
+  "update_date": "2026-02-15T03:17:47.243999",
+  "total_available": 72
 }
