@@ -103,12 +103,6 @@
       "detail": "https://caiji.maotaizy.cc",
       "status": "available"
     },
-    "api_37": {
-      "name": "TV-豆瓣资源",
-      "api": "https://caiji.dbzy.tv/api.php/provide/vod",
-      "detail": "https://caiji.dbzy.tv",
-      "status": "available"
-    },
     "api_38": {
       "name": "TV-豆瓣资源",
       "api": "https://dbzy.tv/api.php/provide/vod",
@@ -137,12 +131,6 @@
       "name": "TV-魔都动漫",
       "api": "https://caiji.moduapi.cc/api.php/provide/vod",
       "detail": "https://caiji.moduapi.cc",
-      "status": "available"
-    },
-    "api_49": {
-      "name": "TV-魔都资源",
-      "api": "https://www.mdzyapi.com/api.php/provide/vod",
-      "detail": "https://www.mdzyapi.com",
       "status": "available"
     },
     "api_52": {
@@ -245,11 +233,6 @@
       "name": "极速资源",
       "api": "https://jszyapi.com/api.php/provide/vod",
       "detail": "https://jszyapi.com",
-      "status": "available"
-    },
-    "mdzy": {
-      "name": "魔都资源",
-      "api": "https://www.mdzyapi.com/api.php/provide/vod",
       "status": "available"
     },
     "xingbaziyuan": {
@@ -425,6 +408,6 @@
       "status": "available"
     }
   },
-  "update_date": "2026-03-29T03:30:46.375148",
-  "total_available": 72
+  "update_date": "2026-04-01T03:37:33.722184",
+  "total_available": 69
 }
