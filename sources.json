@@ -97,12 +97,6 @@
       "detail": "https://www.hongniuzy2.com",
       "status": "available"
     },
-    "api_35": {
-      "name": "TV-茅台资源",
-      "api": "https://caiji.maotaizy.cc/api.php/provide/vod",
-      "detail": "https://caiji.maotaizy.cc",
-      "status": "available"
-    },
     "api_38": {
       "name": "TV-豆瓣资源",
       "api": "https://dbzy.tv/api.php/provide/vod",
@@ -408,6 +402,6 @@
       "status": "available"
     }
   },
-  "update_date": "2026-04-01T03:37:33.722184",
-  "total_available": 69
+  "update_date": "2026-04-08T03:27:57.693016",
+  "total_available": 68
 }
