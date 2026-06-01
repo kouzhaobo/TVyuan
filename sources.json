@@ -219,11 +219,6 @@
       "api": "https://api.xiaojizy.live/provide/vod",
       "status": "available"
     },
-    "xibaocaiji": {
-      "name": "细胞采集黄色",
-      "api": "https://www.xxibaozyw.com/api.php/provide/vod",
-      "status": "available"
-    },
     "yingshigongchang": {
       "name": "影视工厂",
       "api": "https://cj.lziapi.com/api.php/provide/vod/",
@@ -362,6 +357,6 @@
       "status": "available"
     }
   },
-  "update_date": "2026-05-29T04:26:39.623784",
-  "total_available": 61
+  "update_date": "2026-06-01T05:08:51.906663",
+  "total_available": 60
 }
