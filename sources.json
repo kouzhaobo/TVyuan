@@ -67,12 +67,6 @@
       "detail": "https://api.zuidapi.com",
       "status": "available"
     },
-    "api_30": {
-      "name": "AV-百万资源",
-      "api": "https://api.bwzyz.com/api.php/provide/vod",
-      "detail": "https://api.bwzyz.com",
-      "status": "available"
-    },
     "api_32": {
       "name": "TV-神马云",
       "api": "https://api.1080zyku.com/inc/apijson.php/",
@@ -139,12 +133,6 @@
       "detail": "",
       "status": "available"
     },
-    "api_59": {
-      "name": "AV-森林资源",
-      "api": "https://slapibf.com/api.php/provide/vod",
-      "detail": "https://slapibf.com",
-      "status": "available"
-    },
     "api_60": {
       "name": "AV-淫水机资源",
       "api": "https://www.xrbsp.com/api/json.php",
@@ -207,11 +195,6 @@
     "liangziziyuan": {
       "name": "量子资源",
       "api": "https://cj.lziapi.com/api.php/provide/vod",
-      "status": "available"
-    },
-    "senlinziyuan": {
-      "name": "森林资源",
-      "api": "https://slapibf.com/api.php/provide/vod",
       "status": "available"
     },
     "xiaojiziy": {
@@ -357,6 +340,6 @@
       "status": "available"
     }
   },
-  "update_date": "2026-06-08T04:56:55.824063",
-  "total_available": 60
+  "update_date": "2026-06-15T05:27:49.179859",
+  "total_available": 57
 }
