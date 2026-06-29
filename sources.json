@@ -79,12 +79,6 @@
       "detail": "https://www.hongniuzy2.com",
       "status": "available"
     },
-    "api_38": {
-      "name": "TV-豆瓣资源",
-      "api": "https://dbzy.tv/api.php/provide/vod",
-      "detail": "https://dbzy.tv",
-      "status": "available"
-    },
     "api_40": {
       "name": "TV-速博资源",
       "api": "https://subocaiji.com/api.php/provide/vod",
@@ -340,6 +334,6 @@
       "status": "available"
     }
   },
-  "update_date": "2026-06-22T05:22:48.684054",
-  "total_available": 57
+  "update_date": "2026-06-29T04:53:56.908386",
+  "total_available": 56
 }
