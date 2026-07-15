@@ -91,12 +91,6 @@
       "detail": "",
       "status": "available"
     },
-    "api_46": {
-      "name": "TV-飘零资源",
-      "api": "https://p2100.net/api.php/provide/vod",
-      "detail": "https://p2100.net",
-      "status": "available"
-    },
     "api_48": {
       "name": "TV-魔都动漫",
       "api": "https://caiji.moduapi.cc/api.php/provide/vod",
@@ -334,6 +328,6 @@
       "status": "available"
     }
   },
-  "update_date": "2026-07-08T03:36:51.166492",
-  "total_available": 56
+  "update_date": "2026-07-15T03:20:33.870524",
+  "total_available": 55
 }
