@@ -79,12 +79,6 @@
       "detail": "",
       "status": "available"
     },
-    "api_48": {
-      "name": "TV-魔都动漫",
-      "api": "https://caiji.moduapi.cc/api.php/provide/vod",
-      "detail": "https://caiji.moduapi.cc",
-      "status": "available"
-    },
     "api_52": {
       "name": "AV-91麻豆",
       "api": "https://91md.me/api.php/provide/vod",
@@ -316,6 +310,6 @@
       "status": "available"
     }
   },
-  "update_date": "2026-08-15T01:45:17.264422",
-  "total_available": 53
+  "update_date": "2026-08-22T01:44:28.026541",
+  "total_available": 52
 }
