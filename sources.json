@@ -85,12 +85,6 @@
       "detail": "https://91md.me",
       "status": "available"
     },
-    "api_53": {
-      "name": "AV-AIvin",
-      "api": "http://lbapiby.com/api.php/provide/vod",
-      "detail": "",
-      "status": "available"
-    },
     "api_54": {
       "name": "AV-JKUN资源",
       "api": "https://jkunzyapi.com/api.php/provide/vod",
@@ -310,6 +304,6 @@
       "status": "available"
     }
   },
-  "update_date": "2026-08-22T01:44:28.026541",
-  "total_available": 52
+  "update_date": "2026-08-29T06:56:24.343622",
+  "total_available": 51
 }
