@@ -19,24 +19,6 @@
       "detail": "https://api.ukuapi88.com",
       "status": "available"
     },
-    "api_8": {
-      "name": "TV-wujinapi无尽",
-      "api": "https://api.wujinapi.cc/api.php/provide/vod",
-      "detail": "",
-      "status": "available"
-    },
-    "api_18": {
-      "name": "TV-无尽资源",
-      "api": "https://api.wujinapi.com/api.php/provide/vod",
-      "detail": "",
-      "status": "available"
-    },
-    "api_20": {
-      "name": "TV-无尽资源",
-      "api": "https://api.wujinapi.net/api.php/provide/vod",
-      "detail": "",
-      "status": "available"
-    },
     "api_23": {
       "name": "TV-暴风资源",
       "api": "https://bfzyapi.com/api.php/provide/vod",
@@ -298,6 +280,6 @@
       "status": "available"
     }
   },
-  "update_date": "2026-09-22T04:38:57.148853",
-  "total_available": 50
+  "update_date": "2026-09-29T05:34:18.801978",
+  "total_available": 47
 }
