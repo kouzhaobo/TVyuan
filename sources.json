@@ -171,12 +171,6 @@
       "detail": "2025 CSDN/Gitee VOD",
       "status": "available"
     },
-    "new_api_72": {
-      "name": "成人01",
-      "api": "http://dadiapi.com/api.php",
-      "detail": "2025 CSDN/Gitee VOD",
-      "status": "available"
-    },
     "new_api_74": {
       "name": "美少女",
       "api": "https://www.msnii.com/api/xml.php",
@@ -198,12 +192,6 @@
     "new_api_80": {
       "name": "成人06",
       "api": "https://www.xrbsp.com/api/xml.php",
-      "detail": "2025 CSDN/Gitee VOD",
-      "status": "available"
-    },
-    "new_api_82": {
-      "name": "成人07",
-      "api": "http://dadiapi.com/api.php",
       "detail": "2025 CSDN/Gitee VOD",
       "status": "available"
     },
@@ -237,12 +225,6 @@
       "detail": "2025 GitHub/Gitee/CSDN VOD",
       "status": "available"
     },
-    "new_api_83": {
-      "name": "成人01",
-      "api": "http://dadiapi.com/api.php",
-      "detail": "2025 GitHub/Gitee/CSDN VOD",
-      "status": "available"
-    },
     "new_api_85": {
       "name": "成人03",
       "api": "https://www.gdlsp.com/api/xml.php",
@@ -267,12 +249,6 @@
       "detail": "2025 GitHub/Gitee/CSDN VOD",
       "status": "available"
     },
-    "new_api_93": {
-      "name": "成人07",
-      "api": "http://dadiapi.com/api.php",
-      "detail": "2025 GitHub/Gitee/CSDN VOD",
-      "status": "available"
-    },
     "new_api_95": {
       "name": "成人09",
       "api": "https://www.xrbsp.com/api/xml.php",
@@ -280,6 +256,6 @@
       "status": "available"
     }
   },
-  "update_date": "2026-10-15T04:24:34.901936",
-  "total_available": 47
+  "update_date": "2026-10-22T04:27:13.061162",
+  "total_available": 43
 }
