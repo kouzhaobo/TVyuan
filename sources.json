@@ -49,12 +49,6 @@
       "detail": "",
       "status": "available"
     },
-    "api_41": {
-      "name": "TV-量子资源",
-      "api": "https://cj.lziapi.com/api.php/provide/vod",
-      "detail": "",
-      "status": "available"
-    },
     "api_52": {
       "name": "AV-91麻豆",
       "api": "https://91md.me/api.php/provide/vod",
@@ -256,6 +250,6 @@
       "status": "available"
     }
   },
-  "update_date": "2026-10-29T05:33:03.260035",
-  "total_available": 43
+  "update_date": "2026-11-01T05:48:10.732288",
+  "total_available": 42
 }
