@@ -7,18 +7,6 @@
       "detail": "https://155api.com",
       "status": "available"
     },
-    "api_5": {
-      "name": "TV-U酷资源",
-      "api": "https://api.ukuapi.com/api.php/provide/vod",
-      "detail": "https://api.ukuapi.com",
-      "status": "available"
-    },
-    "api_6": {
-      "name": "TV-U酷资源",
-      "api": "https://api.ukuapi88.com/api.php/provide/vod",
-      "detail": "https://api.ukuapi88.com",
-      "status": "available"
-    },
     "api_23": {
       "name": "TV-暴风资源",
       "api": "https://bfzyapi.com/api.php/provide/vod",
@@ -250,6 +238,6 @@
       "status": "available"
     }
   },
-  "update_date": "2026-11-01T05:48:10.732288",
-  "total_available": 42
+  "update_date": "2026-11-08T05:48:50.698925",
+  "total_available": 40
 }
